@@ -33,7 +33,11 @@ class Card {
 	}
 	
 	public Card getNext() {
-		return null;
+		if (cardId % deckSize == deckSize - 1 || isJoker())
+			return null;
+		
+		return new Card(cardId + 1);
+	
 	}
 	
 	public boolean isJoker(int id)
