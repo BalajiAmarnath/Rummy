@@ -52,4 +52,8 @@ class Card implements Comparable<Card>{
 		return this.cardId - card.cardId;
 	}
 	
+	public boolean isSame(Card card) {
+		return this.cardId == card.cardId;
+	}
+	
 }
