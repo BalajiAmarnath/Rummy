@@ -1,4 +1,4 @@
-class Card {
+class Card implements Comparable<Card>{
 	private int cardId;
 	private int rank;
 	private char suit;
@@ -47,4 +47,9 @@ class Card {
 	{
 		return cardId == deckSize;
 	}
+	
+	public int compareTo(Card card) {
+		return card.cardId - this.cardId;
+	}
+	
 }
