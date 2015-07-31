@@ -5,7 +5,6 @@ class Card {
 	
 	private final int suitSize = 13;
 	private final int deckSize = 52;
-	private final int NoOfDecks = 3;
 	
 	public int getCardId() {
 		return cardId;
@@ -21,7 +20,6 @@ class Card {
 	
 	public Card(int id) {
 		cardId = id;
-		id = id % deckSize;
 	
 		if(!isJoker(cardId))
 		{
@@ -33,7 +31,7 @@ class Card {
 	}
 	
 	public Card getNext() {
-		if (cardId % deckSize == deckSize - 1 || isJoker())
+		if (cardId  == deckSize - 1 || isJoker())
 			return null;
 		
 		return new Card(cardId + 1);
@@ -42,11 +40,11 @@ class Card {
 	
 	public boolean isJoker(int id)
 	{
-		return NoOfDecks*deckSize <= id && id < NoOfDecks*deckSize + NoOfDecks ;
+		return id == deckSize;
 	}
 	
 	public boolean isJoker()
 	{
-		return NoOfDecks*deckSize <= cardId && cardId < NoOfDecks*deckSize + NoOfDecks ;		
+		return cardId == deckSize;
 	}
 }
