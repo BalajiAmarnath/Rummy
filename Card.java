@@ -3,6 +3,22 @@ class Card {
 	private int rank;
 	private char suit;
 	
+	private final int suitSize = 13;
+	private final int deckSize = 52;
+	private final int NoOfDecks = 3;
+	
+	public int getCardId() {
+		return cardId;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public char getSuit() {
+		return suit;
+	}
+	
 	public Card(int id) {
 		cardId = id;
 		id = id % deckSize;
