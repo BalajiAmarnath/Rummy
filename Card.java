@@ -49,7 +49,7 @@ class Card implements Comparable<Card>{
 	}
 	
 	public int compareTo(Card card) {
-		return card.cardId - this.cardId;
+		return this.cardId - card.cardId;
 	}
 	
 }
